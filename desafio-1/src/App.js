@@ -1,11 +1,17 @@
+import Header from "./header"
+import Menu from "./menu"
+import Sidebar from "./sidebar"
+import Content from "./content"
+import Footer from "./footer"
+
 function App() {
     return (
         <>
-            <header className="header">Header</header>
-            <nav className="menu">Menu</nav>
-            <aside className="sidebar">Sidebar</aside>
-            <main className="content">Content</main>
-            <footer className="footer">Footer</footer>
+            <Header/>
+            <Menu/>
+            <Sidebar/>
+            <Content/>
+            <Footer/>
         </>
     )
 }
