@@ -1,11 +1,18 @@
-import Button from "./button"
+import H4 from './h4'
 
-function Sidebar() {
+function Sidebar({links}) {
     return (
         <aside className="sidebar">
-            Sidebar
-            <Button kind="primary">Clique me</Button>
-            <Button kind="secondary">saiba mais</Button>
+            <H4 text="Ajuda"/>
+            <ul>
+            {
+                links.map((link) => (
+                    <li key={link.id}>
+                        <a href={link.id}>{link.title}</a>
+                    </li>
+                ))
+            }
+            </ul>
         </aside>
     )
 }

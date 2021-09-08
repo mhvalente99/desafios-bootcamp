@@ -31,8 +31,6 @@
 
 .sidebar {
     grid-area: sidebar;
-    display: flex;
-    justify-content: center;
 }
 
 .content {
