@@ -61,14 +61,19 @@ const articles = [
 ]
 
 function App() {
-    const title = useState(articles[0].title)
-    const content = useState(articles[0].content)
+    const [title, setTitle] = useState(articles[0].title)
+    const [content, setContent] = useState(articles[0].content)
+
+    function handleSelectArticle(title, content) {
+        setTitle(title)
+        setContent(content)        
+    }
 
     return (
         <>
             <Header/>
             <Menu/>
-            <Sidebar links={articles}/>
+            <Sidebar links={articles} handleClick={handleSelectArticle}/>
             <Content title={title} content={content}/>
             <Footer/>
         </>
