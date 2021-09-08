@@ -1,8 +1,9 @@
-import Header from "./header"
-import Menu from "./menu"
-import Sidebar from "./sidebar"
-import Content from "./content"
-import Footer from "./footer"
+import { useState } from 'react'
+import Header from './header'
+import Menu from './menu'
+import Sidebar from './sidebar'
+import Content from './content'
+import Footer from './footer'
 
 import H3 from './h3'
 
@@ -60,12 +61,15 @@ const articles = [
 ]
 
 function App() {
+    const title = useState(articles[0].title)
+    const content = useState(articles[0].content)
+
     return (
         <>
             <Header/>
             <Menu/>
             <Sidebar links={articles}/>
-            <Content/>
+            <Content title={title} content={content}/>
             <Footer/>
         </>
     )
