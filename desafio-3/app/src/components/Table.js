@@ -40,13 +40,16 @@ function Table() {
                         <div style={{ background: car.color }}>
                         </div>
                     </td>
+                    <td>
+                        <button>Deletar</button>
+                    </td>
                 </tr>
         )
      )
     }
 
     return(
-        <table className="bordered striped centered">
+        <table>
             <thead>
                 <tr>
                     <th>Imagem</th>
