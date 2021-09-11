@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react'
 
 function Table() {
     const url = "http://localhost:3333/cars"
-    const [cars, setCars] = useState([]);
+    const [cars, setCars] = useState([
+        {image: 'https://www.nicepng.com/png/detail/12-126581_light…g-mcqueen-budget-cars-3-lightning-mcqueen-png.png', brandModel: 'McQueen', year: '2021', plate: 'AXT-7393', color: '#87121b'}
+    ]);
 
     async function listarCarros() {
         fetch(url)
@@ -27,19 +29,24 @@ function Table() {
     function montarListaCarro(cars) {
         console.log(cars);
         return cars.map((car) => (
-                <tr>
-                    <td>{car.image}</td>
+                <tr key={car.plate}>
+                    <td>
+                        <img src={car.image} alt={car.brandModel}/>
+                    </td>
                     <td>{car.brandModel}</td>
                     <td>{car.year}</td>
                     <td>{car.plate}</td>
-                    <td>{car.color}</td>
+                    <td>
+                        <div style={{ background: car.color }}>
+                        </div>
+                    </td>
                 </tr>
         )
      )
     }
 
     return(
-        <table data-js="table" border="1">
+        <table className="bordered striped centered">
             <thead>
                 <tr>
                     <th>Imagem</th>

@@ -33,24 +33,14 @@ function Form() {
 
     return(
         <form name="form-car" onSubmit={handleSubmit}>
-            <p>Cadastro de Carro</p>
-            <label htmlFor="image">URL Imagem</label>
-            <input type="url" name="image" id="image"/>
-            <br/>
-            <label htmlFor="model">Modelo</label>
-            <input type="text" name="model" id="model"/>
-            <br/>
-            <label htmlFor="year">Ano</label>
-            <input type="number" name="year" id="year"/>
-            <br/>
-            <label htmlFor="licensePlate">Placa</label>
-            <input type="text" name="licensePlate" id="licensePlate"/>
-            <br/>
-            <label htmlFor="color">Cor</label>
-            <input type="color" name="color" id="color"/>
-            <br/>
-            <br/>
-            <button type="submit">Salvar</button>
+            <h1>Cadastro de Carro</h1>
+
+            <input type="url" name="image" id="image" placeholder="URL da Imagem"/>
+            <input type="text" name="model" id="model" placeholder="Modelo"/>
+            <input type="number" name="year" id="year" placeholder="Ano"/>
+            <input type="text" name="licensePlate" id="licensePlate" placeholder="Placa"/>
+            <input type="color" name="color" id="color" placeholder="Cor"/>
+            <button type="submit" className="button">Salvar</button>
         </form>        
     )
 }
