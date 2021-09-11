@@ -1,23 +1,6 @@
-import { useState, useEffect } from 'react'
+import { FaTrash } from 'react-icons/fa'
 
-function Table() {
-    const url = "http://localhost:3333/cars"
-    const [cars, setCars] = useState([
-        {image: 'https://www.nicepng.com/png/detail/12-126581_light…g-mcqueen-budget-cars-3-lightning-mcqueen-png.png', brandModel: 'McQueen', year: '2021', plate: 'AXT-7393', color: '#87121b'}
-    ]);
-
-    async function listarCarros() {
-        fetch(url)
-          .then(response => response.json())
-          .then(data => {
-            setCars(data)
-          })
-    }
-
-    useEffect(() => {
-        listarCarros()
-    }, [])
-
+function Table({ cars, deleteCar }) {
     function montarListaCarroVazio() {
         return (
             <tr>
@@ -26,8 +9,11 @@ function Table() {
         )
     }
 
+    function handleDeleteCar(plate) {
+        deleteCar(plate)
+    }
+
     function montarListaCarro(cars) {
-        console.log(cars);
         return cars.map((car) => (
                 <tr key={car.plate}>
                     <td>
@@ -41,7 +27,9 @@ function Table() {
                         </div>
                     </td>
                     <td>
-                        <button>Deletar</button>
+                        <button className="delete-action" onClick={() => {handleDeleteCar(car.plate)}}>
+                            <FaTrash size={16} color="#ac1a1c"/>
+                        </button>
                     </td>
                 </tr>
         )

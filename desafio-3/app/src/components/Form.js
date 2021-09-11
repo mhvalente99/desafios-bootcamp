@@ -1,4 +1,4 @@
-function Form() {
+function Form({ list, setStatus }) {
     const url = "http://localhost:3333/cars"
 
     function handleSubmit(e) {
@@ -11,10 +11,11 @@ function Form() {
             plate: e.target.elements.licensePlate.value,
             color: e.target.elements.color.value
         }
-        console.log(dadosCarro);
 
         cadastrarCarro(dadosCarro)
 
+        e.target.reset()
+        e.target.elements[0].focus()
     }
 
     async function cadastrarCarro(dados) {
@@ -25,10 +26,28 @@ function Form() {
           },
           body: JSON.stringify(dados)
         })
-        .then(
-          console.log("buscar novos carros")
+        .then(( result ) => {
+            if (result.status !== 400) {
+              list();
+              setStatus({
+                message: "Carro cadastrado com sucesso!",
+                type: "message-success"
+              })
+            } else {
+              setStatus({
+                message: "Erro ao cadastrar carro!",
+                type: "message-error"
+              })
+            }
+          }
         )
-        .catch(err => {console.log(err);})
+        .catch(err => {
+          console.log(err);
+          setStatus({
+            message: "Erro ao cadastrar carro!",
+            type: "message-error"
+          })
+        })
       }
 
     return(

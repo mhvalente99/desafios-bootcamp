@@ -129,4 +129,33 @@ table tr td div {
     min-width: 30px;
     min-height: 30px;
     padding: 15px;
+    border-radius: 3px;
+}
+
+.delete-action {
+    margin: 8px;
+    padding: 8px;
+    background-color: white;
+    border: 1px solid #ac1a1c;
+    border-radius: 3px;
+}
+
+.delete-action:hover {
+    filter: brightness(90%)
+}
+
+.message-success {
+    padding: 12px;
+    margin-bottom: 8px;
+    background-color: #72dd69;
+    color: #395f36;
+    border-radius: 8px;
+}
+
+.message-error {
+    padding: 12px;
+    margin-bottom: 8px;
+    background-color: #ee9589;
+    color: #a75449;
+    border-radius: 8px;
 }
