@@ -13,7 +13,7 @@
     background-color: #1E293B;
 }
 
-.NavigationSide img {
+.LogoMarkee {
     padding: 48px
 }
 
@@ -45,13 +45,39 @@
     border-radius: 5px;
 }
 
-.NavigationSide div ul {
-    list-style: none;
+.WrapperListFile {
+    padding-top: 16px;
 }
 
-.NavigationSide div ul li {
+.ListFile {
+    list-style: none;
+    padding: 0px 32px;
+}
+
+.File {
+    padding: 8px;
+    margin: 8px 0px;
+    border-radius: 6px;
     color: #FFF;
     opacity: 65%;
+    display: flex;
+    align-items: center;
+}
+
+.selected {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.File span {
+    max-width: 110px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 1rem;
+}
+
+.File img {
+    padding: 4px 12px;
 }
 
 main {

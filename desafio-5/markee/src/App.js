@@ -1,12 +1,13 @@
 import './App.css'
 import markee from './markee.png'
+import iconFile from './assets/icon-file-text.svg'
 
 function App() {
   return (
       <>
         <aside className="NavigationSide">
           <figure>
-            <img src={markee} alt="Logo Markee"/>
+            <img src={markee} alt="Logo Markee" className="LogoMarkee"/>
           </figure>
           <div className="WrapperArchive">
             <span className="TitleArchive">Arquivos</span>
@@ -14,9 +15,20 @@ function App() {
           <div className="WrapperButton">
             <button><b>+</b> Adicionar Arquivo</button>
           </div>
-          <div>
-            <ul>
-              <li>README.md</li>
+          <div className="WrapperListFile">
+            <ul className="ListFile">
+              <li className="File selected">
+                <img src={iconFile} alt="Icone Arquivo"/>
+                <span>READMtergergwegwegwtgwtgwgrtgwgwrE.md</span>
+              </li>
+              <li className="File">
+                <img src={iconFile} alt="Icone Arquivo"/>
+                MYFILE.md
+              </li>
+              <li className="File">
+              <img src={iconFile} alt="Icone Arquivo"/>
+                CONTRIB.md
+              </li>
             </ul>
           </div>
         </aside>
