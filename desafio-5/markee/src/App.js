@@ -4,13 +4,15 @@ import markee from './markee.png'
 function App() {
   return (
       <>
-        <aside>
-          <img src={markee} alt="Logo Markee"/>
-          <div className="titleArchive">
-            <span>Arquivos</span>
+        <aside className="NavigationSide">
+          <figure>
+            <img src={markee} alt="Logo Markee"/>
+          </figure>
+          <div className="WrapperArchive">
+            <span className="TitleArchive">Arquivos</span>
           </div>
-          <div>
-            <button>+ Adicionar Arquivo</button>
+          <div className="WrapperButton">
+            <button><b>+</b> Adicionar Arquivo</button>
           </div>
           <div>
             <ul>
@@ -20,9 +22,10 @@ function App() {
         </aside>
         <main>
           <div>
-            <div>
-              <input type="text" value="README.md"/>
-            </div>
+            <input type="text" value="README.md"/>
+          </div>
+          <div>
+            Edit Markee
           </div>
           <div>
             Listar Markee

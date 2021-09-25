@@ -8,26 +8,36 @@
     height: 100vh;
 }
 
-aside {
+.NavigationSide {
     width: 20%;
     background-color: #1E293B;
 }
 
-aside img {
+.NavigationSide img {
     padding: 48px
 }
 
-aside div span {
-    margin: 48px;
+.WrapperArchive {
+    display: flex;
     color: #FFF;
+    height: 3px;
+    background-color: #1FC8E1;
+    margin: 0px 32px 32px 32px;
+    padding: 0px 16px;
+    align-items: center;
+}
+
+.TitleArchive {
+    background-color: #1E293B;
+    padding: 0px 8px;
     z-index: 1;
 }
 
-aside div {
+.WrapperButton {
     padding: 16px 32px;
 }
 
-aside div button {
+.NavigationSide div button {
     height: 36px;
     width: 100%;
     background-color: #1FC8E1;
@@ -35,11 +45,11 @@ aside div button {
     border-radius: 5px;
 }
 
-aside div ul {
+.NavigationSide div ul {
     list-style: none;
 }
 
-aside div ul li {
+.NavigationSide div ul li {
     color: #FFF;
     opacity: 65%;
 }
